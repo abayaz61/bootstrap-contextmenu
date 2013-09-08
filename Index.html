@@ -4,13 +4,14 @@
 	<title></title>
 	<link href="Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
 	<link href="Content/bootstrap/bootstrap-theme.min.css" rel="stylesheet" />
+	<link href="Content/bootstrap-contextmenu.css" rel="stylesheet" />
 	<script src="Scripts/jquery-1.9.1.min.js"></script>
 	<script src="Scripts/bootstrap.min.js"></script>
 	<script src="Scripts/bootstrap-contextmenu.js"></script>
 	<style>
 		body {  min-height:100%; min-width:100%;}
 		.context-cont { width:80%; margin:auto; border:1px solid gray; margin-top:10px; height:400px; background-color:pink; }
-		.contextmenu .dropup > .dropdown-menu, .contextmenu .dropdown > .dropdown-menu { display: block; position: static; margin-bottom: 5px; }
+		
 	</style>
 </head>
 <body>
@@ -20,7 +21,7 @@
 	<script>
 
 		(function () {
-			$(".context-cont").commonContext();
+			$(".context-cont").bootstrapContextMenu();
 
 		})();
 

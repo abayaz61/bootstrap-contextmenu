@@ -21,7 +21,7 @@ Guid = function () {
 	var uuid = s.join("");
 	return uuid;
 };
-CommonContext = function (parameters) {
+bootstrapContextMenu = function (parameters) {
 	var that = this;
 	this.defaults = {
 		id: undefined,
@@ -140,17 +140,17 @@ CommonContext = function (parameters) {
 			});
 			return false;
 		});
-		that.element().data("commonContext", that);
+		that.element().data("bootstrapContextMenu", that);
 	})();
 	this.destroy = function () {
 		that.contextElement.remove();
-		that.element().removeData("commonContext");
+		that.element().removeData("bootstrapContextMenu");
 		return true;
 	};
 	return that;
 };
 (function ($, window, document, undefined) {
-	$.fn.commonContext = function () {
+	$.fn.bootstrapContextMenu = function () {
 
 		var selector = $(this).selector;
 		if (isNullOrEmpty(selector)) {
@@ -158,17 +158,17 @@ CommonContext = function (parameters) {
 			$(this).attr("data-context-id", guid);
 			selector = "[data-context-id=" + guid + "]";
 		}
-		if ($(this).data().commonContext != undefined)
-			return $(this).data().commonContext;
+		if ($(this).data().bootstrapContextMenu != undefined)
+			return $(this).data().bootstrapContextMenu;
 		var defs = arguments;
 		if (arguments.length > 0)
 			defs = arguments[0];
 		else
 			defs = {};
 		defs.selector = selector;
-		return new CommonContext(defs);
+		return new bootstrapContextMenu(defs);
 	}
-	$.fn.getCommonContext = function () {
-		return $(this).data().commonContext;
+	$.fn.getbootstrapContextMenu = function () {
+		return $(this).data().bootstrapContextMenu;
 	};
 })(jQuery, window, document, undefined);
